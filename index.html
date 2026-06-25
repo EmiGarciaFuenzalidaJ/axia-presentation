@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>AXIA.AI — Insurance Intelligence Hub | Backoffice de Bancaseguros con IA</title>
+  <meta name="description" content="AXIA.AI es el backoffice de bancaseguros impulsado por IA. Gestioná pólizas, siniestros, comisiones y tu pipeline comercial, y consultá tu operación en lenguaje natural con Sofos." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- set theme before paint to avoid flash of wrong theme -->
+  <script>(function(){try{var t=localStorage.getItem('axia-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+
+  <meta property="og:title" content="AXIA.AI — Insurance Intelligence Hub" />
+  <meta property="og:description" content="El backoffice de bancaseguros con IA. Tu operación, en lenguaje natural." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css?v=20260625-2" />
+</head>
+<body>
+
+  <!-- ambient background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+  <!-- top progress bar -->
+  <div class="deck-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <header class="topbar" id="topbar">
+    <a href="#" class="brand" data-goto="0" aria-label="AXIA.AI inicio">
+      <img src="assets/logo.svg" alt="" class="brand-mark" />
+      <span class="brand-word">AXIA<span class="brand-ai">.AI</span></span>
+    </a>
+
+    <nav class="top-nav" aria-label="Navegación de slides">
+      <button data-goto="1">Arquitectura</button>
+      <button data-goto="4">Producto</button>
+      <button data-goto="5">Sofos IA</button>
+      <button data-goto="7">Informes</button>
+      <button data-goto="9">Pipeline</button>
+      <button data-goto="12">Contacto</button>
+    </nav>
+
+    <div class="top-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema claro/oscuro">
+        <i data-lucide="moon" class="icon-dark"></i>
+        <i data-lucide="sun" class="icon-light"></i>
+      </button>
+      <a href="https://wa.me/2635009032" target="_blank" rel="noopener" class="btn btn-primary btn-sm top-demo">
+        <i data-lucide="sparkles"></i> Solicitar demo
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button data-goto="1">Arquitectura</button>
+    <button data-goto="2">Solicitud</button>
+    <button data-goto="4">Producto</button>
+    <button data-goto="5">Sofos IA</button>
+    <button data-goto="7">Informes</button>
+    <button data-goto="9">Pipeline</button>
+    <button data-goto="10">Casos de uso</button>
+    <button data-goto="12">Contacto</button>
+    <button class="mm-theme" id="themeToggleMobile">
+      <span class="icon-dark"><i data-lucide="moon"></i> Tema claro</span>
+      <span class="icon-light"><i data-lucide="sun"></i> Tema oscuro</span>
+    </button>
+    <a href="https://wa.me/2635009032" target="_blank" rel="noopener" class="btn btn-primary">
+      <i data-lucide="sparkles"></i> Solicitar demo
+    </a>
+  </div>
+
+  <!-- ===================== DECK ===================== -->
+  <main class="deck" id="deck">
+    <div class="track" id="track">
+
+      <!-- ============ SLIDE 1 · HERO ============ -->
+      <section class="slide slide-hero" data-label="Inicio">
+        <div class="slide-inner center">
+          <div class="hero-logo anim">
+            <img src="assets/logo.svg" alt="" />
+            <span>AXIA<span class="brand-ai">.AI</span></span>
+          </div>
+          <span class="eyebrow anim" data-delay="1"><i data-lucide="sparkles"></i> Insurance Intelligence Hub · Powered by AI</span>
+          <h1 class="anim" data-delay="2">Optimizá tu operación.<br><span class="gradient-text">Decidí con IA.</span></h1>
+          <p class="hero-sub anim" data-delay="3">El backoffice de bancaseguros que unifica clientes, pólizas, siniestros, comisiones y pipeline comercial — y se consulta en lenguaje natural.</p>
+          <div class="hero-ctas anim" data-delay="4">
+            <a href="https://wa.me/2635009032" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><i data-lucide="sparkles"></i> Solicitar demo</a>
+            <button class="btn btn-ghost btn-lg" data-goto="4"><i data-lucide="layout-grid"></i> Ver funcionalidades</button>
+          </div>
+          <p class="hero-micro anim" data-delay="5">// modo demo sobre datos reales · sin instalaciones</p>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE · ARQUITECTURA ============ -->
+      <section class="slide" data-label="Arquitectura">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="network"></i> Arquitectura</span>
+            <h2 class="anim" data-delay="1">El ecosistema digital de <span class="gradient-text">AXIA</span></h2>
+            <p class="anim" data-delay="2">Una plataforma de punta a punta que conecta al cliente, al banco/broker y a las aseguradoras — del alta a la póliza digital emitida.</p>
+          </div>
+
+          <div class="arch anim" data-delay="2">
+            <div class="arch-flow">
+              <div class="arch-node arch-client">
+                <div class="an-ico"><i data-lucide="user-round"></i></div>
+                <div class="an-title">Cliente</div>
+                <div class="an-sub">vía PAS / ORG</div>
+              </div>
+
+              <div class="arch-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+
+              <div class="arch-group g1">
+                <div class="ag-head"><b>1 · Portal</b><span>Banco / Broker</span></div>
+                <div class="ag-card"><b>Solicitud</b><span>Alta y cotización</span></div>
+                <div class="ag-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+                <div class="ag-card"><b>Datos &amp; docs</b><span>Carga de datos</span></div>
+              </div>
+
+              <div class="arch-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+
+              <div class="arch-group g2">
+                <div class="ag-head"><b>2 · Backoffice</b><span>Banco / Broker</span></div>
+                <div class="ag-card"><b>Validación</b><span>Scoring y riesgo</span></div>
+                <div class="ag-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+                <div class="ag-card"><b>Atención</b><span>IA + agente humano</span></div>
+              </div>
+
+              <div class="arch-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+
+              <div class="arch-group g3">
+                <div class="ag-head"><b>3 · Backoffice</b><span>Aseguradoras</span></div>
+                <div class="ag-card"><b>Suscripción</b><span>Tarifa y riesgo</span></div>
+                <div class="ag-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+                <div class="ag-card"><b>Emisión</b><span>Póliza digital</span></div>
+              </div>
+            </div>
+
+            <div class="arch-return">
+              <svg class="ar-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 5 5v0a5 5 0 0 1-5 5H9"/></svg>
+              <span>Póliza digital emitida al cliente</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE · SOLICITUD (interactiva) ============ -->
+      <section class="slide" data-label="Solicitud">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="file-pen-line"></i> Portal · Solicitud digital</span>
+            <h2 class="anim" data-delay="1">Contratá un seguro <span class="gradient-text">en 4 pasos</span></h2>
+            <p class="anim" data-delay="2">Así solicita un cliente desde el portal del banco: elige el producto, completa sus datos y recibe su póliza. Probalo — es interactivo.</p>
+          </div>
+          <div class="solic anim" data-delay="2" id="solic" data-noswipe></div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 2 · SISTEMA INTEGRAL ============ -->
+      <section class="slide" data-label="Sistema">
+        <div class="slide-inner split">
+          <div class="copy">
+            <span class="eyebrow anim"><i data-lucide="globe"></i> Insurtech para Bancaseguros</span>
+            <h2 class="anim" data-delay="1">Sistema Integral de <span class="gradient-text">Gestión</span></h2>
+            <p class="anim" data-delay="2">AXIA.AI conecta al banco, sus aseguradoras y su fuerza comercial en un ecosistema digital inteligente. Cubre todo el flujo de seguros, de punta a punta, impulsado por IA para operar con más velocidad y precisión.</p>
+          </div>
+          <div class="visual">
+            <div class="stat-grid">
+              <div class="stat-card anim" data-delay="1"><div class="v gradient-text">+15</div><div class="l">módulos integrados</div></div>
+              <div class="stat-card anim" data-delay="2"><div class="v gradient-text">3</div><div class="l">aseguradoras conectadas</div></div>
+              <div class="stat-card anim" data-delay="3"><div class="v gradient-text">5</div><div class="l">etapas de pipeline CRM</div></div>
+              <div class="stat-card anim" data-delay="4"><div class="v gradient-text">100%</div><div class="l">multi-tenant propio</div></div>
+              <div class="stat-card wide anim" data-delay="5"><div class="l">consultas en lenguaje natural</div><div class="v gradient-text">Sofos · IA nativa</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 3 · FUNCIONALIDADES ============ -->
+      <section class="slide" data-label="Herramientas">
+        <div class="slide-inner split">
+          <div class="copy">
+            <span class="eyebrow anim"><i data-lucide="activity"></i> Herramientas</span>
+            <h2 class="anim" data-delay="1">Herramientas <span class="gradient-text">completas</span></h2>
+            <p class="anim" data-delay="2">Cada módulo diseñado para el flujo real de un backoffice de bancaseguros. Potenciá tu operación diaria con herramientas inteligentes e integradas.</p>
+          </div>
+          <div class="visual">
+            <div class="tool-grid">
+              <div class="tool anim" data-delay="1"><i data-lucide="bot"></i><b>Sofos AI</b><span>Asistente conversacional</span></div>
+              <div class="tool anim" data-delay="1"><i data-lucide="layout-dashboard"></i><b>Dashboard & BI</b><span>Métricas en vivo</span></div>
+              <div class="tool anim" data-delay="2"><i data-lucide="file-text"></i><b>Pólizas</b><span>Control total</span></div>
+              <div class="tool anim" data-delay="2"><i data-lucide="shield-alert"></i><b>Siniestros</b><span>Gestión de reclamos</span></div>
+              <div class="tool anim" data-delay="3"><i data-lucide="git-branch"></i><b>Pipeline CRM</b><span>Score IA</span></div>
+              <div class="tool anim" data-delay="3"><i data-lucide="calculator"></i><b>Cotizaciones</b><span>Comparativa de ofertas</span></div>
+              <div class="tool anim" data-delay="4"><i data-lucide="banknote"></i><b>Comisiones</b><span>Conciliación</span></div>
+              <div class="tool anim" data-delay="4"><i data-lucide="users"></i><b>Clientes</b><span>Cartera & prospectos</span></div>
+              <div class="tool anim" data-delay="5"><i data-lucide="plug"></i><b>Integraciones</b><span>Monitor en vivo</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 4 · SOFOS ============ -->
+      <section class="slide" data-label="Sofos IA">
+        <div class="slide-inner split">
+          <div class="copy">
+            <span class="eyebrow anim"><i data-lucide="bot"></i> Asistente Virtual</span>
+            <h2 class="anim" data-delay="1">Hablale a tu operación.<br><span class="gradient-text">Sofos responde.</span></h2>
+            <p class="anim" data-delay="2">Preguntá en lenguaje natural y obtené datos accionables de tu cartera, sin armar reportes ni esperar a nadie.</p>
+            <ul class="check-list">
+              <li class="anim" data-delay="3"><i data-lucide="check-circle-2"></i><span><strong>Comisiones al instante</strong> — "¿Cuánto ganó el banco?"</span></li>
+              <li class="anim" data-delay="4"><i data-lucide="check-circle-2"></i><span><strong>Forecast de prima</strong> — "¿Pronóstico para el Q3?"</span></li>
+              <li class="anim" data-delay="5"><i data-lucide="check-circle-2"></i><span><strong>Cross-selling guiado</strong> — "¿A quién le ofrezco Hogar?"</span></li>
+            </ul>
+          </div>
+          <div class="visual">
+            <div class="chat anim" data-delay="2">
+              <div class="chat-head">
+                <div class="chat-avatar"><i data-lucide="bot"></i></div>
+                <div class="meta"><b>Sofos</b><span>Asistente virtual · AXIA.AI</span></div>
+                <div class="live"><span class="pulse"></span> en vivo</div>
+              </div>
+              <div class="bubble user">¿A qué clientes les ofrezco Seguro de Hogar?</div>
+              <div class="bubble bot">Hay <b>312 clientes candidatos</b> (84 de alta propensión), con un potencial de <b>$ 9,6M</b> en prima anual. ¿Abro la lista de cross-selling?</div>
+              <div class="bubble user">¿Cuál es el pronóstico de prima para el Q3?</div>
+              <div class="bubble bot">Proyección <b>+12,4%</b> sobre el trimestre anterior, traccionada por Seguro de Auto y Vida.</div>
+              <div class="chat-input"><span>Preguntale algo a Sofos…</span><span class="send"><i data-lucide="arrow-up"></i></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 5 · DASHBOARD ============ -->
+      <section class="slide" data-label="Dashboard">
+        <div class="slide-inner split">
+          <div class="copy">
+            <span class="eyebrow anim"><i data-lucide="layout-dashboard"></i> Dashboard</span>
+            <h2 class="anim" data-delay="1">Centralizá tu <span class="gradient-text">operación</span></h2>
+            <p class="anim" data-delay="2">Dashboard inteligente con métricas en tiempo real. Visualizá KPIs financieros, seguimiento de operaciones y análisis de cartera desde un solo lugar.</p>
+            <ul class="check-list">
+              <li class="anim" data-delay="3"><i data-lucide="check-circle-2"></i><span>Vista unificada de todas tus operaciones</span></li>
+              <li class="anim" data-delay="4"><i data-lucide="check-circle-2"></i><span>Forecasting y evolución de ventas</span></li>
+              <li class="anim" data-delay="5"><i data-lucide="check-circle-2"></i><span>Cartera por aseguradora y producto</span></li>
+            </ul>
+          </div>
+          <div class="visual">
+            <div class="mock anim" data-delay="2">
+              <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">axia.ai/dashboard</span></div>
+              <div class="mock-body">
+                <div class="mock-kpis">
+                  <div class="kpi v-cyan"><div class="v">50.922</div><div class="l">Pólizas vigentes</div></div>
+                  <div class="kpi v-green"><div class="v">$18,4M</div><div class="l">Comisiones</div></div>
+                  <div class="kpi v-violet"><div class="v">294</div><div class="l">Siniestros</div></div>
+                  <div class="kpi v-amber"><div class="v">+12,4%</div><div class="l">Forecast Q3</div></div>
+                </div>
+                <div class="mock-panel">
+                  <h4>Cartera por aseguradora</h4>
+                  <div class="bar-item"><div class="top"><span>La Segunda</span><span>41,2%</span></div><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div></div>
+                  <div class="bar-item"><div class="top"><span>Triunfo Seguros</span><span>33,8%</span></div><div class="bar-track"><div class="bar-fill" style="width:67%"></div></div></div>
+                  <div class="bar-item"><div class="top"><span>Qualia Seguros</span><span>25,0%</span></div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE · DISEÑADOR DE INFORMES ============ -->
+      <section class="slide" data-label="Informes">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="table-2"></i> Business Intelligence · Sin código</span>
+            <h2 class="anim" data-delay="1">Diseñá tus informes, <span class="gradient-text">sin depender de IT</span></h2>
+            <p class="anim" data-delay="2">Creá informes profesionales en minutos, sin programar. Diseño visual drag &amp; drop, conexión a múltiples fuentes, filtros y parámetros dinámicos, exportación a PDF/Excel/CSV y envío programado — todo seguro y listo para escalar. Ideal para acelerar decisiones y reducir costos.</p>
+          </div>
+
+          <div class="bd-stage anim" data-delay="2" id="bdStage">
+          <div class="builder" id="builder">
+            <!-- Panel de objetos -->
+            <aside class="bd-panel">
+              <div class="bd-search"><i data-lucide="search"></i> Buscar atributo / indicador</div>
+              <div class="bd-cat">Atributos</div>
+              <div class="bd-chips">
+                <button class="dz-chip" draggable="true" data-type="attr" data-label="Mes"><span class="dot"></span>Mes</button>
+                <button class="dz-chip" draggable="true" data-type="attr" data-label="Aseguradora"><span class="dot"></span>Aseguradora</button>
+                <button class="dz-chip" draggable="true" data-type="attr" data-label="Producto"><span class="dot"></span>Producto</button>
+                <button class="dz-chip" draggable="true" data-type="attr" data-label="Sucursal"><span class="dot"></span>Sucursal</button>
+                <button class="dz-chip" draggable="true" data-type="attr" data-label="Operador"><span class="dot"></span>Operador</button>
+              </div>
+              <div class="bd-cat">Indicadores</div>
+              <div class="bd-chips">
+                <button class="dz-chip" draggable="true" data-type="ind" data-label="Comisión"><span class="dot"></span>Comisión</button>
+                <button class="dz-chip" draggable="true" data-type="ind" data-label="Prima Anual"><span class="dot"></span>Prima Anual</button>
+                <button class="dz-chip" draggable="true" data-type="ind" data-label="% Comisión"><span class="dot"></span>% Comisión</button>
+                <button class="dz-chip" draggable="true" data-type="ind" data-label="Nº de Pólizas"><span class="dot"></span>Nº de Pólizas</button>
+              </div>
+            </aside>
+
+            <!-- Canvas -->
+            <div class="bd-canvas">
+              <div class="bd-toolbar">
+                <div class="bd-title" id="bdTitle">Informe sin título</div>
+                <span class="bd-btn"><i data-lucide="plus"></i> Nuevo</span>
+                <div class="bd-export-menu">
+                  <button class="bd-btn bd-export-btn" id="exportBtn" type="button" aria-haspopup="true" aria-expanded="false"><i data-lucide="download"></i> Exportar <i data-lucide="chevron-down" class="caret"></i></button>
+                  <div class="bd-menu" id="exportMenu" role="menu">
+                    <button class="bd-menu-item" data-fmt="excel-f" role="menuitem"><i data-lucide="sheet"></i> Excel · con formato</button>
+                    <button class="bd-menu-item" data-fmt="excel-p" role="menuitem"><i data-lucide="table"></i> Excel · sin formato</button>
+                    <button class="bd-menu-item" data-fmt="pdf" role="menuitem"><i data-lucide="printer"></i> PDF · imprimir / descargar</button>
+                  </div>
+                </div>
+                <span class="bd-btn run"><i data-lucide="play"></i> Ejecutar</span>
+              </div>
+              <div class="bd-filter"><i data-lucide="filter"></i> Filtros: <span class="tk">Estado de Póliza = Emitida</span></div>
+              <div class="bd-zones">
+                <div class="dropzone filas"><div class="dz-label">Filas · Eje Y</div><div class="dz-tokens"></div><div class="dz-placeholder">Soltá un atributo</div></div>
+                <div class="dropzone columnas"><div class="dz-label">Columnas · Eje X</div><div class="dz-tokens"></div><div class="dz-placeholder">Soltá un atributo</div></div>
+                <div class="dropzone datos empty"><div class="dz-label">Datos · Intersección</div><div class="dz-tokens"></div><div class="dz-placeholder">Soltá un indicador</div></div>
+              </div>
+              <div class="bd-result">
+                <div class="rhead"><span>Vista previa</span><span class="rcount">— filas procesadas</span></div>
+                <div class="bd-empty"><i data-lucide="mouse-pointer-2"></i> Arrastrá un indicador a <b>Datos</b> para ver resultados</div>
+                <div class="bd-tablewrap">
+                  <table class="bd-table"><thead></thead><tbody></tbody></table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pantalla de exportación (ocupa el mismo espacio que el builder) -->
+          <div class="bd-export" id="bdExport" hidden>
+            <div class="bd-export-head">
+              <div class="bd-export-title"><i data-lucide="file-down"></i> <span id="exportHeadTitle">Exportar informe</span></div>
+              <button class="bd-export-close" id="exportClose" type="button" aria-label="Volver al constructor"><i data-lucide="arrow-left"></i> Volver</button>
+            </div>
+            <div class="bd-export-body">
+              <div class="bd-preview">
+                <div class="bd-page" id="bdPage">
+                  <div class="bd-page-brand">AXIA<span>.AI</span></div>
+                  <div class="bd-page-title" id="pvTitle">Axia · Informe sin título</div>
+                  <div class="bd-page-meta" id="pvMeta">Administrador de Seguros — Informe de Producción</div>
+                  <div class="bd-page-tablewrap"><table class="bd-page-table" id="pvTable"><thead></thead><tbody></tbody></table></div>
+                </div>
+              </div>
+              <aside class="bd-settings">
+                <div class="bd-set-row"><label>Destino</label><div class="bd-select" id="pvDest"><i data-lucide="file-text"></i> <span>Guardar como PDF</span></div></div>
+                <div class="bd-set-row"><label id="pvPagesLabel">Páginas</label><div class="bd-select">Todas</div></div>
+                <div class="bd-set-row" id="pvLayoutRow"><label>Diseño</label><div class="bd-select">Horizontal</div></div>
+                <div class="bd-set-row"><label>Formato</label><div class="bd-select" id="pvFmt">PDF (.pdf)</div></div>
+                <div class="bd-set-more"><span>Más ajustes</span><i data-lucide="chevron-down"></i></div>
+                <div class="bd-set-actions">
+                  <button class="btn btn-primary btn-sm" id="exportSave" type="button"><i data-lucide="download"></i> <span id="exportSaveLabel">Guardar</span></button>
+                  <button class="btn btn-ghost btn-sm" id="exportCancel" type="button">Cancelar</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          </div><!-- /bd-stage -->
+          <div class="bd-toast" id="bdToast" role="status" aria-live="polite" hidden><i data-lucide="check-circle-2"></i> <span id="bdToastMsg">Informe exportado</span></div>
+          <p class="builder-cap anim" data-delay="3"><i data-lucide="hand"></i> Arrastrá o tocá las tarjetas para construir el informe</p>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 6 · CÓMO FUNCIONA ============ -->
+      <section class="slide" data-label="Cómo funciona">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="git-branch"></i> Cómo funciona</span>
+            <h2 class="anim" data-delay="1">Del prospecto a la <span class="gradient-text">póliza emitida</span></h2>
+            <p class="anim" data-delay="2">El pipeline comercial sigue las 5 etapas reales del negocio, con scoring de IA en cada paso.</p>
+          </div>
+          <div class="flow">
+            <div class="flow-line"></div>
+            <div class="flow-step anim" data-delay="1"><div class="flow-num">01</div><h4>Prospecto</h4><p>Cliente derivado de la sucursal con interés potencial.</p></div>
+            <div class="flow-step anim" data-delay="2"><div class="flow-num">02</div><h4>Contactado</h4><p>El operador toma el caso y registra el contacto.</p></div>
+            <div class="flow-step anim" data-delay="3"><div class="flow-num">03</div><h4>Cotizado</h4><p>Propuesta enviada con condiciones y comparativa.</p></div>
+            <div class="flow-step anim" data-delay="4"><div class="flow-num">04</div><h4>Negociación</h4><p>El Score IA prioriza por probabilidad de cierre.</p></div>
+            <div class="flow-step anim" data-delay="5"><div class="flow-num">05</div><h4>Ganado</h4><p>Emisión confirmada y comisión a tesorería.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE · PIPELINE CRM (Kanban) ============ -->
+      <section class="slide" data-label="Pipeline">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="kanban-square"></i> Pipeline Comercial · CRM</span>
+            <h2 class="anim" data-delay="1">Tu embudo de ventas, <span class="gradient-text">vivo y en movimiento</span></h2>
+            <p class="anim" data-delay="2">Gestioná todas tus oportunidades de venta en un tablero visual e intuitivo. La IA (y vos también) mueve cada negocio entre etapas con un clic y seguís tu valor de cartera y tasa de cierre en tiempo real. Menos planillas, más ventas cerradas.</p>
+          </div>
+
+          <div class="kanban-stage anim" data-delay="2" id="kanbanStage">
+            <div class="kpi-row">
+              <div class="kpi-c"><div class="v" id="kOpen">—</div><div class="l">Oportunidades abiertas</div></div>
+              <div class="kpi-c"><div class="v gradient-text" id="kWeighted">—</div><div class="l">Valor ponderado</div></div>
+              <div class="kpi-c"><div class="v" id="kWon">—</div><div class="l">Ganadas</div></div>
+              <div class="kpi-c"><div class="v" id="kRate">—</div><div class="l">Tasa de cierre</div></div>
+            </div>
+
+            <div class="kanban-tools">
+              <span class="kanban-hint"><i data-lucide="hand"></i> Arrastrá una tarjeta entre columnas, o usá las flechas ‹ › para moverla de etapa</span>
+            </div>
+
+            <div class="kanban-wrap" data-noswipe>
+              <div class="kanban" id="kanban">
+                <div class="kcol" data-stage="0"><div class="kcol-head"><span class="kdot s0"></span> Prospecto <span class="kcount">0</span></div><div class="kcards"></div></div>
+                <div class="kcol" data-stage="1"><div class="kcol-head"><span class="kdot s1"></span> Contactado <span class="kcount">0</span></div><div class="kcards"></div></div>
+                <div class="kcol" data-stage="2"><div class="kcol-head"><span class="kdot s2"></span> Cotizado <span class="kcount">0</span></div><div class="kcards"></div></div>
+                <div class="kcol" data-stage="3"><div class="kcol-head"><span class="kdot s3"></span> Negociación <span class="kcount">0</span></div><div class="kcards"></div></div>
+                <div class="kcol" data-stage="4"><div class="kcol-head"><span class="kdot s4"></span> Ganado <span class="kcount">0</span></div><div class="kcards"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 7 · CASOS DE USO ============ -->
+      <section class="slide" data-label="Casos de uso">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="users"></i> Para quién es</span>
+            <h2 class="anim" data-delay="1">Una plataforma, <span class="gradient-text">cada rol con su vista</span></h2>
+          </div>
+          <div class="use-grid">
+            <article class="use-card anim" data-delay="1">
+              <span class="role">Administrador General</span>
+              <h3>Dirección & supervisión</h3>
+              <ul>
+                <li><i data-lucide="check"></i> Parámetros de comisión por producto</li>
+                <li><i data-lucide="check"></i> Usuarios, roles y auditoría</li>
+                <li><i data-lucide="check"></i> Visión global de la operación</li>
+              </ul>
+            </article>
+            <article class="use-card anim" data-delay="2">
+              <span class="role">Operador & Supervisor</span>
+              <h3>Venta & cartera diaria</h3>
+              <ul>
+                <li><i data-lucide="check"></i> Pipeline CRM con score de prioridad</li>
+                <li><i data-lucide="check"></i> Cotizaciones, propuestas y emisión</li>
+                <li><i data-lucide="check"></i> Cross-selling guiado por Sofos</li>
+              </ul>
+            </article>
+            <article class="use-card anim" data-delay="3">
+              <span class="role">Analista de Seguros</span>
+              <h3>Análisis & control técnico</h3>
+              <ul>
+                <li><i data-lucide="check"></i> Conciliación de comisiones</li>
+                <li><i data-lucide="check"></i> Diseñador de informes y BI</li>
+                <li><i data-lucide="check"></i> Análisis de cartera y forecasting</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 8 · DIFERENCIALES ============ -->
+      <section class="slide" data-label="Por qué AXIA">
+        <div class="slide-inner center wide-inner">
+          <div class="slide-head">
+            <span class="eyebrow anim"><i data-lucide="zap"></i> Por qué AXIA.AI</span>
+            <h2 class="anim" data-delay="1">Diseñado para <span class="gradient-text">bancaseguros</span>, no adaptado</h2>
+          </div>
+          <div class="diff-grid">
+            <div class="diff-card anim" data-delay="1"><div class="ico"><i data-lucide="database"></i></div><h3>Multi-tenant propio</h3><p>Clientes, cartera y comisiones en tu base. Cero dependencia de terceros para conciliar.</p></div>
+            <div class="diff-card anim" data-delay="2"><div class="ico"><i data-lucide="brain-circuit"></i></div><h3>IA nativa</h3><p>Sofos, score de propensión, forecasting y cross-selling integrados, no como un agregado.</p></div>
+            <div class="diff-card anim" data-delay="3"><div class="ico"><i data-lucide="building-2"></i></div><h3>Modelo institorio</h3><p>Pensado para el agente institorio: el banco como canal, con su CUIT y aseguradoras.</p></div>
+            <div class="diff-card anim" data-delay="4"><div class="ico"><i data-lucide="bar-chart-3"></i></div><h3>BI a medida</h3><p>Diseñador de informes propio: ranking, cancelaciones y evolución sin depender de IT.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 9 · CONTACTO / CIERRE ============ -->
+      <section class="slide slide-contact" data-label="Contacto">
+        <div class="slide-inner split">
+          <div class="copy">
+            <span class="eyebrow anim"><i data-lucide="message-circle"></i> Contacto</span>
+            <h2 class="anim" data-delay="1">Llevá tu backoffice <span class="gradient-text">al siguiente nivel</span></h2>
+            <p class="anim" data-delay="2">AXIA.AI es desarrollado y comercializado por <strong>DAIA Soluciones AI</strong>. Te mostramos la plataforma funcionando sobre datos reales, en una demo personalizada.</p>
+            <ul class="contact-list">
+              <li class="anim" data-delay="3"><div class="ci"><i data-lucide="map-pin"></i></div><div><b>Dirección</b><span>Elpidio Gonzalez 5379, Mendoza, Argentina</span></div></li>
+              <li class="anim" data-delay="3"><div class="ci"><i data-lucide="mail"></i></div><div><b>Email</b><a href="mailto:info@daia.com.ar">info@daia.com.ar</a></div></li>
+              <li class="anim" data-delay="4"><div class="ci"><i data-lucide="clock"></i></div><div><b>Horario</b><span>Lunes a Viernes, 8:00 a 23:00 hs</span></div></li>
+            </ul>
+            <div class="socials anim" data-delay="5">
+              <a href="https://www.facebook.com/profile.php?id=61551928085236" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/daia.automatizaciones/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/daia-ia/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://daia.com.ar" target="_blank" rel="noopener" aria-label="Web"><i data-lucide="globe"></i></a>
+            </div>
+          </div>
+          <div class="visual">
+            <div class="contact-card anim" data-delay="2">
+              <div class="cc-mark"><img src="assets/logo.svg" alt="" /></div>
+              <h3>Solicitá tu demo</h3>
+              <p>Te mostramos la plataforma completa adaptada a tu caso. Sin compromiso.</p>
+              <a href="https://wa.me/2635009032?text=Hola%20DAIA,%20quiero%20una%20demo%20de%20AXIA.AI" target="_blank" rel="noopener" class="btn whatsapp btn-lg"><i data-lucide="message-circle"></i> Escribir por WhatsApp</a>
+              <div class="or">— o —</div>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@daia.com.ar&amp;su=Demo%20AXIA.AI&amp;body=Hola%20DAIA,%20quiero%20una%20demo%20de%20AXIA.AI" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><i data-lucide="mail"></i> Enviar un email</a>
+              <div class="cc-credit">Desarrollado por <a href="https://daia.com.ar" target="_blank" rel="noopener">DAIA Soluciones AI</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===================== DECK CONTROLS ===================== -->
+  <div class="deck-controls">
+    <button class="nav-arrow" id="prevBtn" aria-label="Slide anterior"><i data-lucide="chevron-left"></i></button>
+    <div class="counter"><span id="cur">01</span><span class="sep">/</span><span id="total">09</span></div>
+    <div class="dots" id="dots" role="tablist" aria-label="Ir a slide"></div>
+    <button class="nav-arrow" id="nextBtn" aria-label="Slide siguiente"><i data-lucide="chevron-right"></i></button>
+  </div>
+
+  <!-- hint -->
+  <div class="hint" id="hint"><i data-lucide="arrow-right"></i> Deslizá o usá las flechas</div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/main.js?v=20260625-2"></script>
+</body>
+</html>
